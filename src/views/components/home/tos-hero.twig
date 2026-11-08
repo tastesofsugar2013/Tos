@@ -1,0 +1,32 @@
+{#
+| Variable | Type | Description |
+|---|---|---|
+| component.title | ?string | multilanguage, falls back to trans(blocks.tos.hero_title) |
+| component.lead | ?string | |
+| component.button_text | ?string | |
+| component.button_url | ?string | link |
+| component.image_main | ?string | |
+| component.image_cookie | ?string | |
+#}
+{% set title = component.title ?: trans('blocks.tos.hero_title') %}
+{% set lead = component.lead ?: trans('blocks.tos.hero_lead') %}
+{% set btn_text = component.button_text ?: trans('blocks.tos.hero_button') %}
+{% set btn_url = component.button_url %}
+{% set img_main = component.image_main ?: ('images/tos/hero-cups.webp'|asset) %}
+{% set img_cookie = component.image_cookie ?: ('images/tos/hero-cookie.webp'|asset) %}
+<div class="tos" lang="{{ language.code }}" dir="{{ theme.is_rtl ? 'rtl' : 'ltr' }}">
+<section component-id="{{ componentId }}" data-testid="store-home-tos-hero" class="hero band b-pink">
+      <span class="spk" aria-hidden="true" style="top:12%;left:4%;width:22px;height:22px;color:#fff;animation-delay:0s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0z"></path></svg></span><span class="spk" aria-hidden="true" style="top:70%;left:8%;width:16px;height:16px;color:#fff;animation-delay:0.8s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0z"></path></svg></span><span class="spk" aria-hidden="true" style="top:8%;left:46%;width:18px;height:18px;color:#fff;animation-delay:1.4s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0z"></path></svg></span><span class="spk" aria-hidden="true" style="top:78%;left:52%;width:26px;height:26px;color:#fff;animation-delay:0.3s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0z"></path></svg></span><span class="spk" aria-hidden="true" style="top:34%;left:94%;width:20px;height:20px;color:#fff;animation-delay:1s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0z"></path></svg></span><span class="spk" aria-hidden="true" style="top:86%;left:90%;width:14px;height:14px;color:#fff;animation-delay:1.8s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0z"></path></svg></span>
+      <div class="wrap">
+        <div class="stage" aria-hidden="true">
+          <div class="a ph1"><img src="{{ img_main }}" alt="" width="720" height="541" fetchpriority="high"></div>
+          <div class="a ph2"><img src="{{ img_cookie }}" alt="" width="560" height="470"></div>
+        </div>
+        <div class="copy">
+          <h1 class="chunk">{{ title|nl2br }}</h1>
+          <p class="lead">{{ lead }}</p>
+          {% if btn_url and btn_url != '#' %}<a class="btn alt" href="{{ btn_url }}">{{ btn_text }} <svg class="arr" viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h21M16 1l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>{% endif %}
+        </div>
+      </div>
+    </section>
+</div>

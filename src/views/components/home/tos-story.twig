@@ -1,0 +1,33 @@
+{#
+| Variable | Type | Description |
+|---|---|---|
+| component.title | ?string | |
+| component.text_1 | ?string | |
+| component.text_2 | ?string | |
+| component.text_3 | ?string | |
+| component.button_text | ?string | |
+| component.button_url | ?string | |
+| component.image_left | ?string | optional |
+| component.image_right | ?string | optional |
+#}
+{% set title = component.title ?: trans('blocks.tos.story_title') %}
+{% set t1 = component.text_1 ?: trans('blocks.tos.story_1') %}
+{% set t2 = component.text_2 ?: trans('blocks.tos.story_2') %}
+{% set btn_text = component.button_text ?: trans('blocks.tos.story_button') %}
+<div class="tos" lang="{{ language.code }}" dir="{{ theme.is_rtl ? 'rtl' : 'ltr' }}">
+<section component-id="{{ componentId }}" data-testid="store-home-tos-story" class="why band b-soft">
+<span class="spk" aria-hidden="true" style="top:14%;left:6%;width:22px;height:22px;color:#fff;animation-delay:0.2s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0z"></path></svg></span><span class="spk" aria-hidden="true" style="top:76%;left:92%;width:20px;height:20px;color:#fff;animation-delay:0.9s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0z"></path></svg></span><span class="spk" aria-hidden="true" style="top:88%;left:14%;width:14px;height:14px;color:#fff;animation-delay:1.5s"><svg viewBox="0 0 24 24"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0z"></path></svg></span>
+  <div class="wrap">
+    <div class="card-tilt l" aria-hidden="true">{% if component.image_left %}<img src="{{ component.image_left }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">{% else %}<svg viewBox="0 0 120 120" aria-hidden="true"><rect x="76" y="6" width="7" height="46" rx="3" fill="#E8508C" transform="rotate(12 79 30)"></rect><path d="M30 34h60l-8 72a6 6 0 0 1-6 5H44a6 6 0 0 1-6-5z" fill="#fff" stroke="#23334A" stroke-width="3"></path><path d="M33 34h54l-2.6 24H35.6z" fill="#8DB36B"></path><path d="M35.6 58h48.8l-3.2 28H38.8z" fill="#CFE3B0"></path><ellipse cx="60" cy="34" rx="30" ry="5" fill="#A9CB86" stroke="#23334A" stroke-width="3"></ellipse></svg>{% endif %}</div>
+    <div class="mid">
+      <h2 class="chunk">{{ title }}</h2>
+      <p>{{ t1|nl2br }}</p>
+      {% if t2 %}<p>{{ t2|nl2br }}</p>{% endif %}
+      {% if component.text_3 %}<p>{{ component.text_3|nl2br }}</p>{% endif %}
+      {% set btn_url = component.button_url %}
+      {% if btn_url and btn_url != '#' %}<p style="margin-top:1.3rem"><a class="btn alt" href="{{ btn_url }}">{{ btn_text }} <svg class="arr" viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h21M16 1l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a></p>{% endif %}
+    </div>
+    <div class="card-tilt r" aria-hidden="true">{% if component.image_right %}<img src="{{ component.image_right }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">{% else %}<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="46" cy="68" r="36" fill="#E7B777" stroke="#23334A" stroke-width="3"></circle><circle cx="32" cy="58" r="5.5" fill="#6B3E26"></circle><circle cx="52" cy="50" r="5" fill="#6B3E26"></circle><circle cx="44" cy="78" r="6" fill="#6B3E26"></circle><circle cx="62" cy="70" r="4.5" fill="#6B3E26"></circle><circle cx="30" cy="82" r="4" fill="#6B3E26"></circle><circle cx="82" cy="52" r="32" fill="#A9CB86" stroke="#23334A" stroke-width="3"></circle><circle cx="72" cy="42" r="5" fill="#fff"></circle><circle cx="92" cy="46" r="5.5" fill="#fff"></circle><circle cx="80" cy="64" r="5" fill="#fff"></circle><circle cx="96" cy="64" r="4" fill="#fff"></circle><circle cx="68" cy="58" r="3.5" fill="#fff"></circle></svg>{% endif %}</div>
+  </div>
+</section>
+</div>

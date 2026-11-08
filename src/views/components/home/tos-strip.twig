@@ -1,0 +1,18 @@
+{#
+| Variable | Type | Description |
+|---|---|---|
+| component.items | object[] | optional list, each: icon, title |
+#}
+<div class="tos" lang="{{ language.code }}" dir="{{ theme.is_rtl ? 'rtl' : 'ltr' }}">
+<section component-id="{{ componentId }}" data-testid="store-home-tos-strip" class="strip band b-sky"><div class="wrap">
+{% if component.items|length %}
+  {% for item in component.items %}{% if item.title %}
+    <div>{% if item.icon %}<i class="{{ item.icon }}" aria-hidden="true"></i>{% endif %}<b>{{ item.title|nl2br }}</b></div>
+  {% endif %}{% endfor %}
+{% else %}
+  <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg><b>{{ trans('blocks.tos.strip_1')|nl2br }}</b></div>
+  <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12l-1.5 8h-9z"></path><path d="M5 12c-1-4 2-6 4-5 1-3 5-3 6 0 2-1 5 1 4 5"></path><circle cx="12" cy="4.5" r="1.2"></circle></svg><b>{{ trans('blocks.tos.strip_2')|nl2br }}</b></div>
+  <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10h11v4a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5z"></path><path d="M16 11h2a2 2 0 0 1 0 4h-2"></path><path d="M8 3c-1 1.5 1 2.5 0 4M12 3c-1 1.5 1 2.5 0 4"></path></svg><b>{{ trans('blocks.tos.strip_3')|nl2br }}</b></div>
+{% endif %}
+</div></section>
+</div>

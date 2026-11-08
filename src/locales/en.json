@@ -1,0 +1,60 @@
+{
+  "blocks": {
+    "header": {
+      "cart": "Cart"
+    },
+    "appBanner": {
+      "download_now": "download now"
+    },
+    "tos": {
+      "hero_title": "A little sugar, a lot of love",
+      "hero_lead": "Matcha, coffee and sweets from our bakery and home cafe, ready for pickup or delivery.",
+      "hero_button": "Order now",
+      "strip_1": "Pickup or delivery",
+      "strip_2": "Sweets made fresh daily",
+      "strip_3": "Matcha & coffee",
+      "photo_alt": "Japanese matcha tin",
+      "story_title": "Two sisters, since 2013",
+      "story_1": "Tastes of Sugar began in 2013, when two young sisters started baking together.",
+      "story_2": "Today we are a bakery and home cafe, making matcha, coffee and sweets.",
+      "story_button": "About us",
+      "feat_ship": "Ships to you",
+      "feat_all": "All matcha",
+      "feat_view": "View product",
+      "moments_title": "Sweet moments start here",
+      "moments_button": "Catering & events",
+      "m_matcha": "Matcha",
+      "m_coffee_pan": "Coffee o'clock",
+      "m_coffee": "Coffee",
+      "m_sweets": "Sweets"
+    }
+  },
+  "pages": {
+    "cart": {
+      "cart_options": "Cart Options"
+    },
+    "products": {
+      "barcode": "Barcode"
+    },
+    "order": {
+      "can_edit_or_delete_your_review_within": "You can edit or delete your review within",
+      "edit_period_ended": "The period to edit the review has ended",
+      "delete_period_ended": "The period to delete the review has ended",
+      "days_since_added": "days since it was added",
+      "option_name": "Option name",
+      "option_content": "Content"
+    },
+    "thank_you": {
+      "view_invoice": "View invoice",
+      "contact_us": "Got a question? We are happy to hear from you",
+      "cashback": "Cashback",
+      "loyalty_points": "Loyalty points",
+      "gifts_title": "Gifts you cannot miss 🎉",
+      "order_received": "Thank you for shopping with us. We are working on your order."
+    }
+  },
+  "common": {
+    "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",
+    "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount"
+  }
+}

@@ -1,0 +1,15 @@
+{#
+| Variable | Type | Description |
+|---|---|---|
+| component.image | ?string | |
+| component.alt | ?string | |
+| component.url | ?string | link |
+| component.max_width | ?string | |
+#}
+{% set img = component.image ?: ('images/tos/matcha-tin.webp'|asset) %}
+{% set alt = component.alt ?: trans('blocks.tos.photo_alt') %}
+<div class="tos" lang="{{ language.code }}" dir="{{ theme.is_rtl ? 'rtl' : 'ltr' }}">
+<section component-id="{{ componentId }}" data-testid="store-home-tos-photo" class="mband band b-white"><div class="wrap"><div class="mscene">
+{% if component.url and component.url != '#' %}<a href="{{ component.url }}"><img src="{{ img }}" alt="{{ alt }}" loading="lazy" width="1200" height="882"></a>{% else %}<img src="{{ img }}" alt="{{ alt }}" loading="lazy" width="1200" height="882">{% endif %}
+</div></div></section>
+</div>
